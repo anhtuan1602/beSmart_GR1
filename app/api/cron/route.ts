@@ -46,6 +46,9 @@ export async function GET(request: Request) {
           {
             url: product.url,
           },
+          {
+            includeResultMetadata: true,
+          },
           product
         );
 

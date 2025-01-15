@@ -42,10 +42,10 @@ export async function scrapeAndStoreProduct(productUrl: string) {
             }
         }
 
-        const newProduct = await Product.findOneAndUpdate( {
-            url: scrapedProduct.url,
-        },  product,
-            { upsert: true, new: true } 
+        const newProduct = await Product.findOneAndUpdate( 
+            { url: scrapedProduct.url },  
+            product,
+            { upsert: true, new: true },
         );
 
         revalidatePath(`/products/${newProduct._id}`)
