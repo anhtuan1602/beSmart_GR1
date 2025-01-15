@@ -3,6 +3,8 @@ import Searchbar from '@/components/Searchbar'
 import HeroCarousel from '@/components/HeroCarousel'
 import { getAllProducts } from '@/lib/actions'
 import ProductCard from '@/components/ProductCard'
+import { formatNumber } from '@/lib/utils'
+
 
 const Home = async () => {
   const allProducts = await getAllProducts();

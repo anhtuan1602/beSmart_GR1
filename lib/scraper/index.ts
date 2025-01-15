@@ -25,6 +25,7 @@ export async function scrapeAmazonProduct(url: string) {
         // Fetching
         const response = await axios.get(url, options)
         const $ = cheerio.load(response.data);
+        console.log($)
 
         // Extracting data 
         const title = $('#productTitle').text().trim();

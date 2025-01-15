@@ -1,7 +1,10 @@
 'use client'
 
+import { useRouter } from 'next/navigation';
 import { scrapeAndStoreProduct } from '@/lib/actions';
 import { FormEvent, useState } from 'react'
+import { getAllProducts } from '@/lib/actions';
+import Product from '../lib/models/product.model';
 
 const isValidAmazonProductURL = (url: string) => {
     try {
@@ -22,6 +25,7 @@ const isValidAmazonProductURL = (url: string) => {
 }
 
 const Searchbar = () => {
+    const router = useRouter()
     const [searchPrompt, setsearchPrompt] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
@@ -36,8 +40,8 @@ const Searchbar = () => {
             setIsLoading(true)
 
             //scraping
-            const product = await scrapeAndStoreProduct(searchPrompt)
-            
+            const searchingProduct = await scrapeAndStoreProduct(searchPrompt)
+                        
         } catch (error) {
             console.log(error)
         } finally {
