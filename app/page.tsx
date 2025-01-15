@@ -13,7 +13,7 @@ const Home = async () => {
         <div className="flex max-xl:flex-col gap-16">
           <div className="flex flex-col justify-center"> 
             <p className="small-text">
-              Smart Shopping Starts Here
+              Quach Tuan Anh 20225469 GR1
               <Image 
                 src="/assets/icons/arrow-right.svg"
                 alt="arrow-right"
@@ -23,12 +23,12 @@ const Home = async () => {
             </p>
 
             <h1 className="head-text">
-              Unleash the Power of
+              Shopping cleverly with
               <span className="text-primary"> beSmart</span>
             </h1>
 
             <p className="mt-6">
-              Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
+              Enter your Amazon product link to track the price and get notified when it drops.
             </p>
 
             <Searchbar />
