@@ -9,11 +9,7 @@ import { getSimilarProducts } from "@/lib/actions";
 import ProductCard from "@/components/ProductCard";
 import Modal from "@/components/Modal";
 
-type Props = {
-    params: { id: string }
-}
-
-const ProductDetails = async ({ params }: Props) => {
+const ProductDetails = async ({ params }: {params: Promise<{id: string }>}) => {
     // Await params before destructuring
     const { id } = await params;
     const product: Product = await getProductById(id);
